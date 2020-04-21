@@ -1,0 +1,17 @@
+grep: 
+	grep cat file
+	grep "^ing" file
+	grep -v "^\(..\)*$" file
+	grep -io "[b-df-hj-np-tv-z]\{3,\}" file
+
+sed:
+	sed "s/^/abc/" file
+	sed "s/^\s*$/empty/" file
+	sed "s/\t/   /" file
+	sed "s/\<\(.\)\(.\)\(.\)>/\3\1\2/g/" file
+
+awk:
+	awk -F: '{print $5}' file
+	
+	
+ 
