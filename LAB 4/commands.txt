@@ -12,6 +12,11 @@ sed:
 
 awk:
 	awk -F: '{print $5}' file
-	
+	awk -F: -f group_names.awk passwd.txt
+	awk -F: -f sum.awk numbers.txt
+	ncal -M | awk -f calendar.awk
+
+5.  ps aux | awk '{print $1}' | sort | uniq -c | sort  -k1nr
+
 	
  
