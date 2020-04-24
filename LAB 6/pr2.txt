@@ -1,0 +1,3 @@
+execlp("ls", "ls", "*.c", NULL);
+
+it shows all the files that have .c at the end as an extension from the current directory
