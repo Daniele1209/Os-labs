@@ -1,0 +1,22 @@
+1)
+	cat last.fake.txt | awk -F " " '/economica/&&/Sun/ {print $1}' | sort -k1,1 -u
+2)
+	cat last.fake.txt | awk -F " " '$7 ~ /2[34]:../  {printf "%s\t%s\n", $1,$10}' | sort -k1,1 -u
+3)
+	cat passwd.fake.txt | awk -F: '$1 ~ /^m/ && $3 % 7 == 0  {print $5}' | sort
+4)
+	cat ps.fake.txt | awk '/^root/ {print $6}' | sort -u
+5)
+	cat passwd.fake.txt | awk -F: '$1 ~ /.*88/ {print $5}'
+6)
+	cat passwd.fake.txt | awk -F: '$3 ~ /23[0-9]/ {print $5}'
+7)
+	cat last.fake.txt | awk -F" " '$1 ~ /^t/ && $2 ~ /pts.9/ {print $1}'
+8)
+	cat ps.fake.txt | awk -F" " '$1 ~ /^r/ {print $1}' | sort | uniq | sed "s/\([aeiou]\)/\1\1/gi"
+9)
+	cat passwd.fake.txt | sed "s/[a-z0-9 ]//gi" | sort | uniq
+10)
+	cat passwd.fake.txt | sed "s/[^r]//gi" | sort | uniq
+11)
+	cat ps.fake.txt | awk -F " " -f script11.awk
